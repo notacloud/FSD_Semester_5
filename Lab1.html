@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <script>
+        function vali() {
+            var x = document.forms.lab2.myName.value;
+            var y = document.forms.lab2.myRole.value;
+            var l = document.forms.lab2.myPhone.value;
+            var emptyRegex = /^\s*$/;
+            if (emptyRegex.test(x) || emptyRegex.test(y) || emptyRegex.test(l)) {
+                window.alert("All fields are mandatory!!");
+                return false;
+            }
+            var z = document.forms.lab2.myEmail.value
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (!validRegex.test(z)) {
+                window.alert("Invalid email");
+                myEmail.focus();
+                return false;
+            }
+            var a = document.forms.lab2.myPassword.value
+            a.type = "text"
+            var b = document.forms.lab2.myCPassword.value
+            b.type = "text"
+            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,30}$/
+            if (!passwordRegex.test(a)) {
+                window.alert("Invalid Password")
+                myPassword.focus()
+                return false
+            }
+            if (!(a == b)) {
+                window.alert("Passwords do not match")
+                return false;
+            }
+
+            var phoneRegex = /^[6-9]\d{9}$/;
+            var l = document.forms.lab2.myPhone.value
+            if (!phoneRegex.test(l)) {
+                window.alert("Invalid Phone number")
+                myPhone.focus()
+                return false
+            }
+        }
+        function tick() {
+            document.getElementById("root").innerHTML =
+                "<div><label>It is "
+                + new Date().toLocaleTimeString() +
+                "</label></div>";
+        }
+        setInterval(tick, 1000);
+    </script>
+    <style>
+        body {
+            background-color: grey;
+        }
+    </style>
+    <title>
+        Form page
+    </title>
+</head>
+
+<body>
+    <h1 align="center" style="color: white;">Form page</h1>
+    <div align="center" color="grey">
+        <form name="lab2" action="success.html" onsubmit="return vali()" method="post">
+            <label for="name" style="color: white;">Name</label>
+            <div>
+                <input type="text" name="myName" id="name">
+            </div>
+            <br>
+            <label style="color:white;" for="myRole">Role</label>
+            <div>
+                <input type="text" name="myRole" id="myRole">
+            </div>
+            <br>
+            <label style="color:white;" for=" myEmail">Email</label>
+            <div>
+                <input type="email" name="myEmail" id="myEmail">
+            </div>
+            <br>
+            <label style="color:white;" for=" myPassword">Password</label>
+            <div>
+                <input type="password" name="myPassword" id="myPassword">
+            </div>
+            <br>
+            <label style="color:white;" for=" myCPassword">Confirm Password</label>
+            <div>
+                <input type="password" name="myCPassword" id="myCPassword">
+            </div>
+            <br>
+            <label style="color:white;" for="myTime">Time</label>
+            <br>
+            <div id="root">
+            </div>
+            <br>
+            <label style="color:white;" for="myPhone">Phone Number</label>
+            <br>
+            <div>
+                <input type="text" name="myPhone">
+            </div>
+            <br>
+            <div>
+                <input style="color:blueviolet;" type="submit" value="Submit Now">
+                <input style="color:red;" type="reset" value="Reset Now">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
