@@ -27,87 +27,159 @@ $uid = $_SESSION['uid'];
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        .abc {
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url('../images/1920_1080.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .abc {
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 
 <body>
     <form action="courierMenu.php" method="POST" enctype="multipart/form-data">
-        <div style="overflow-x:auto;">
-            <table border="0px solid" style="margin: auto; font-weight:bold;border-spacing: 5px 15px;">
-                <th colspan="4" style="text-align: center;background-color:orange; width: 140px; height: 50px;">Fill The Details Of Sender & Receiver</th>
-                <tr>
-                    <td colspan="4" style="text-align: center;">
-                        <hr>
-                    </td>
-                </tr>
-                <tr style="text-align: center;">
-                    <th colspan="2">SENDER</th>
-                    <th colspan="2">RECEIVER</th>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        <hr>
-                    </td>
-                </tr>
-                <tr>
-                    <th colspan="2"></th>
-                    <th colspan="2"></th>
-                </tr>
-                <tr>
-                    <td>Name:</td>
-                    <td><input type="text" name="sname" placeholder="Sender FullName" required></td>
+        <section class="h-50 gradient-form">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col">
+                        <div class="card my-4 shadow-3">
+                            <div class="row g-0">
+                                <div class="col-xl-6 d-xl-block bg-image">
+                                    <div class="card-body p-md-5 text-black">
+                                        <h3 class="mb-4 text-uppercase">Sender Info</h3>
 
-                    <td>Name:</td>
-                    <td><input type="text" name="rname" placeholder="Sender FullName" required></td>
-                </tr>
-                <tr>
-                    <td>Email:</td>
-                    <td><input type="text" name="semail" value="<?php echo $email; ?>" readonly></td>
+                                        <div class="form-outline mb-4">
+                                            <input type="text" name="sname" id="form3Example1m"
+                                                class="form-control form-control-lg" placeholder="Sender's name"
+                                                required />
+                                            <label class="form-label" for="form3Example1m">Senders
+                                                name</label>
+                                        </div>
 
-                    <td>Email:</td>
-                    <td><input type="text" name="remail" placeholder="Receiver EmailId" required></td>
-                </tr>
-                <tr>
-                    <td>PhoneNo.:</td>
-                    <td><input type="number" name="sphone" placeholder="sender number" required></td>
+                                        <div class="form-outline mb-4">
+                                            <input type="textfield" name="saddress" id="form3Example8"
+                                                class="form-control form-control-lg" placeholder="Sender's address"
+                                                required />
+                                            <label class="form-label" for="form3Example8">Address</label>
+                                        </div>
 
-                    <td>PhoneNo.:</td>
-                    <td><input type="number" name="rphone" placeholder="receiver number" required></td>
-                </tr>
-                <tr>
-                    <td>Address:</td>
-                    <td><input type="textfield" name="saddress" placeholder="sender address" required></td>
+                                        <div class="form-outline mb-4">
+                                            <input type="number" name="sphone" id="form3Example3"
+                                                class="form-control form-control-lg" placeholder="Sender's phone"
+                                                required />
+                                            <label class="form-label" name='sphone' for="form3Example3">Phone
+                                                number</label>
+                                        </div>
 
-                    <td>Address:</td>
-                    <td><input type="textfield" name="raddress" placeholder="receiver address" required></td>
-                </tr>
-                <tr>
-                    <td colspan="4">✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️✖️</td>
-                </tr>
-                <tr>
-                    <td>Weight:</td>
-                    <td><input type="number" name="wgt" placeholder="weights in kg" required></td>
+                                        <div class="form-outline mb-4">
+                                            <input type="text" name="semail" id="form3Example2"
+                                                class="form-control form-control-lg" value="<?php echo $email; ?>"
+                                                readonly />
+                                            <label class="form-label" for="form3Example2">Email</label>
+                                        </div>
 
-                    <td>Payment Id:</td>
-                    <td><input type="number" name="billno" placeholder="enter transition num" required></td>
-                </tr>
-                <tr>
-                    <!-- <td>Date:</td><td><input type="date" name="date"></td> -->
-                    <td>Date:</td>
-                    <td><input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" readonly /></td>
-                    <td>Items Image:</td>
-                    <td><input type="file" name="simg" ></td>
-                </tr>
-                <tr>
-                    <td colspan="4" align="center"><input type="submit" name="submit" value="Place Order" style="background-color: orange; border-radius: 15px; width: 140px; height: 50px;cursor:pointer;"></td>
-                </tr>
-            </table>
-        </div>
+                                        <div class="form-outline mb-4 ">
+                                            <input type="date" id="form3Example2" class="form-control form-control-lg"
+                                                name="date" value="<?php echo date('Y-m-d'); ?>" readonly />
+                                            <label class="form-label" for="form3Example2">Date</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4 ">
+                                            <input type="number" name="billno" id="form3Example2"
+                                                class="form-control form-control-lg" placeholder="Transaction ID"
+                                                required />
+                                            <label class="form-label" for="form3Example2">Bill number</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card-body p-md-5 text-black">
+                                        <h3 class="mb-4 text-uppercase">Receiver Info</h3>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="text" name="rname" id="form3Example1m"
+                                                class="form-control form-control-lg" placeholder="Reciever's name"
+                                                required />
+                                            <label class="form-label" name='rname' for="form3Example1m">Recievers
+                                                name</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="textfield" name="raddress" id="form3Example8"
+                                                class="form-control form-control-lg" placeholder="Reciever's address"
+                                                required />
+                                            <label class="form-label" for="form3Example8">Address</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="number" name="rphone" id="form3Example3"
+                                                class="form-control form-control-lg" placeholder="Reciever's phone"
+                                                required />
+                                            <label class="form-label" for="form3Example3">Phone
+                                                Number</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="text" name='remail' id="form3Example2"
+                                                class="form-control form-control-lg" placeholder="Reciever's mail"
+                                                required />
+                                            <label class="form-label" for="form3Example2">Email</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4 ">
+                                            <input type="number" name="wgt" id="form3Example2"
+                                                class="form-control form-control-lg" placeholder="Weight in kg"
+                                                required />
+                                            <label class="form-label" for="form3Example2">Weight in
+                                                kg</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4 ">
+                                            <label>Upload Image</label>
+                                            <input type="file" name="simg" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <section class=" gradient-custom">
+                                    <div class="d-flex justify-content-center pt-3">
+                                        <input type="submit" name="submit" value="Place Order"
+                                            style="background-color: orange; border-radius: 15px; width: 140px; height: 50px;cursor:pointer;">
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
     </form>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
 </body>
 
 </html>
-
 <?php
 
 if (isset($_POST['submit'])) { //if we'll not give this,it'will submit from with zero values.
@@ -139,11 +211,12 @@ if (isset($_POST['submit'])) { //if we'll not give this,it'will submit from with
 
     if ($run == true) {
 
-    ?> <script>
-            alert('Order Placed Successfully :)');
-            window.open('courierMenu.php', '_self');
-        </script>
-    <?php
+?>
+<script>
+    alert('Order Placed Successfully :)');
+    window.open('courierMenu.php', '_self');
+</script>
+<?php
     }
 }
 

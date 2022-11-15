@@ -2,7 +2,7 @@
 
 <?php
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
 
     include('../dbconnection.php');
     $idd = $_POST['idd'];
@@ -22,17 +22,18 @@ if(isset($_POST['submit'])){
     $imagenam = $_FILES['simg']['name'];
     $tempnam = $_FILES['simg']['tmp_name'];
 
-    move_uploaded_file($tempnam,"../dbimages/$imagenam");
+    move_uploaded_file($tempnam, "../dbimages/$imagenam");
 
     $qry = "UPDATE `courier` SET `sname`='$sname',`rname`='$rname',`semail`='$semail',`remail`='$remail',`sphone`='$sphone',`rphone`='$rphone',`saddress`='$sadd',`raddress`='$radd',`weight`='$wgt',`billno`='$billn',`image`='$imagenam',`date`='$newDate' WHERE `c_id`='$idd'";
-    $run = mysqli_query($dbcon,$qry);
+    $run = mysqli_query($dbcon, $qry);
 
-    if($run==true){
-        ?>  <script>
-            alert('Data Updated Successfully :)');
-            window.open('home.php','_self');
-            </script>
-        <?php
+    if ($run == true) {
+?>
+<script>
+    alert('Data Updated Successfully :)');
+    window.open('home.php', '_self');
+</script>
+<?php
     }
 
 }
