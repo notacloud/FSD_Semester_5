@@ -176,6 +176,12 @@ $uid = $_SESSION['uid'];
                 </div>
         </section>
     </form>
+    <footer class="footer">
+
+        <p style="margin-top: 4px;margin-bottom:-10px">Copyright © 2020 Designed by IPS</p><br>
+        <a href="mailto:1032201946@mitwpu.edu.in" style="color:brown">Contact Us</a>
+
+    </footer>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
 </body>
 

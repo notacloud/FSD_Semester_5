@@ -180,53 +180,51 @@ include('header.php');
 
     ?>
 
-    <div class="container">
-        <section class="h-100 gradient-form">
-            <div class="container py-5 h-50">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col-xl-10">
+    <section class="h-100 gradient-form">
+        <div class="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
 
-                        <div class="card user-card-full">
-                            <div class="row m-l-0 m-r-0">
-                                <div class="col-sm-4 bg-c-lite-green user-profile">
-                                    <div
-                                        class="card-block text-center text-white d-flex justify-content-center align-items-center h-100">
-                                        <div> <img src="https://img.icons8.com/bubbles/100/000000/user.png"
-                                                class="img-radius" alt="User-Profile-Image"> </div>
-                                        <!-- <h3 class="f-w-600"><?php echo $data['name']; ?></h3> -->
-                                        <!-- <p>user</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i> -->
-                                    </div>
+                    <div class="card user-card-full">
+                        <div class="row m-l-0 m-r-0">
+                            <div class="col-sm-4 bg-c-lite-green user-profile">
+                                <div
+                                    class="card-block text-center text-white d-flex justify-content-center align-items-center h-100">
+                                    <div> <img src="https://img.icons8.com/bubbles/100/000000/user.png"
+                                            class="img-radius" alt="User-Profile-Image"> </div>
+                                    <!-- <h3 class="f-w-600"><?php echo $data['name']; ?></h3> -->
+                                    <!-- <p>user</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i> -->
                                 </div>
-                                <div class="col-sm-8">
-                                    <div class="card-block">
-                                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card-block">
+                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Name</p>
+                                            <h6 class="text-muted f-w-400">
+                                                <?php echo $data['name']; ?>
+                                            </h6>
+                                        </div>
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                <p class="m-b-10 f-w-600">Name</p>
+                                                <p class="m-b-10 f-w-600">Email</p>
                                                 <h6 class="text-muted f-w-400">
-                                                    <?php echo $data['name']; ?>
+                                                    <?php echo $data['email']; ?>
                                                 </h6>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <p class="m-b-10 f-w-600">Email</p>
-                                                    <h6 class="text-muted f-w-400">
-                                                        <?php echo $data['email']; ?>
-                                                    </h6>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <p class="m-b-10 f-w-600">Phone</p>
-                                                    <h6 class="text-muted f-w-400">
-                                                        <?php echo $data['pnumber']; ?>
-                                                    </h6>
-                                                </div>
+                                            <div class="col-sm-6">
+                                                <p class="m-b-10 f-w-600">Phone</p>
+                                                <h6 class="text-muted f-w-400">
+                                                    <?php echo $data['pnumber']; ?>
+                                                </h6>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="row">
-                                            <hr><br>
-                                            <hr>
-                                        </div>
+                                    <div class="row">
+                                        <hr><br>
+                                        <hr>
                                     </div>
                                 </div>
                             </div>
@@ -234,9 +232,10 @@ include('header.php');
                     </div>
                 </div>
             </div>
-    </div>
-    </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+        </div>
+        </div>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
 </body>
 
 </html>
