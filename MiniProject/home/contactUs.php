@@ -33,7 +33,6 @@
                         <input class="form-control" name="subject" type="text" placeholder="Subject">
                     </div>
                     <div class="form-group">
-                        <!-- change this tag name into textarea to show textarea field. Due to more textarea I got an error, so I change the name of this field -->
                         <input class="form-control textarea" type="textarea" name="message"
                             placeholder="Compose your message">
                     </div>
